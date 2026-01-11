@@ -79,57 +79,82 @@ const leaders: Leader[] = [
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0f0f23] via-[#1a1a2e] to-[#16213e] py-16 px-4">
-      <div className="w-[900px] mx-auto">
-        <header className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">
+    <div className="min-h-screen bg-[#0a0a0f] py-16 px-4 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#9b87f5]/5 via-transparent to-[#0EA5E9]/5"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#9b87f5]/10 rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#0EA5E9]/10 rounded-full blur-[120px]"></div>
+      
+      <div className="w-[900px] mx-auto relative z-10">
+        <header className="text-center mb-14">
+          <h1 className="text-5xl font-bold text-white mb-4 tracking-tight bg-gradient-to-r from-white via-[#e0d8ff] to-white bg-clip-text text-transparent">
             Лидеры организаций
           </h1>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#9b87f5] to-transparent mx-auto"></div>
+          <div className="w-32 h-px bg-gradient-to-r from-transparent via-[#9b87f5] to-transparent mx-auto"></div>
         </header>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-4">
           {leaders.map((leader, index) => (
             <Card 
               key={index}
-              className="relative overflow-hidden bg-[#1e1e2e]/40 border border-[#2a2a3e] backdrop-blur-xl shadow-2xl"
+              className="group relative overflow-hidden bg-gradient-to-br from-[#1a1625]/90 via-[#1e1a2e]/90 to-[#1a1a2e]/90 border border-[#2d2640]/60 backdrop-blur-2xl shadow-[0_8px_32px_0_rgba(155,135,245,0.12)]"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#9b87f5]/5 via-transparent to-[#0EA5E9]/5"></div>
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#9b87f5] via-[#7E69AB] to-[#0EA5E9]"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#9b87f5]/0 via-[#9b87f5]/5 to-[#0EA5E9]/0 opacity-0"></div>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(155,135,245,0.03),transparent_70%)]"></div>
               
-              <div className="relative px-6 py-4 flex items-center gap-6">
-                <div className="flex items-center gap-4 flex-1">
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#9b87f5]/40 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#0EA5E9]/20 to-transparent"></div>
+              
+              <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-[#9b87f5] via-[#8b7ac7] to-[#0EA5E9] shadow-[0_0_12px_rgba(155,135,245,0.6)]"></div>
+              
+              <div className="relative px-8 py-5 flex items-center gap-8">
+                <div className="flex items-center gap-5 flex-1">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#9b87f5] to-[#0EA5E9] rounded-xl blur-md opacity-50"></div>
-                    <img 
-                      src={leader.avatar} 
-                      alt={leader.name}
-                      className="relative w-14 h-14 rounded-xl border-2 border-[#9b87f5]/40 object-cover shadow-lg"
-                    />
+                    <div className="absolute -inset-2 bg-gradient-to-br from-[#9b87f5] via-[#8b7ac7] to-[#0EA5E9] rounded-2xl blur-lg opacity-40"></div>
+                    <div className="relative w-16 h-16 rounded-xl bg-gradient-to-br from-[#2d2640] to-[#1e1a2e] p-0.5 shadow-xl">
+                      <img 
+                        src={leader.avatar} 
+                        alt={leader.name}
+                        className="w-full h-full rounded-xl object-cover border border-[#9b87f5]/30"
+                      />
+                    </div>
+                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#0EA5E9] rounded-full border-2 border-[#0a0a0f] shadow-[0_0_8px_rgba(14,165,233,0.8)]"></div>
                   </div>
 
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#9b87f5]/10 to-[#0EA5E9]/10 rounded-lg flex items-center justify-center border border-[#9b87f5]/20">
-                      <Icon name={leader.icon as any} className="text-[#9b87f5]" size={20} />
+                  <div className="flex items-center gap-4">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#9b87f5]/20 to-[#0EA5E9]/20 rounded-xl blur-sm"></div>
+                      <div className="relative w-12 h-12 bg-gradient-to-br from-[#2d2640]/80 to-[#1e1a2e]/80 rounded-xl flex items-center justify-center border border-[#9b87f5]/30 shadow-lg backdrop-blur-sm">
+                        <Icon name={leader.icon as any} className="text-[#c4b5fd]" size={22} />
+                      </div>
                     </div>
                     <div>
-                      <h3 className="text-base font-bold text-white tracking-wide">
+                      <h3 className="text-lg font-bold text-white tracking-wide mb-0.5 leading-tight">
                         {leader.organization}
                       </h3>
-                      <p className="text-xs text-gray-400 mt-0.5">{leader.name}</p>
+                      <p className="text-xs text-[#9b87f5]/80 font-medium">{leader.name}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-8">
-                  <div className="flex items-center gap-2">
-                    <Icon name="Calendar" className="text-[#9b87f5]/70" size={16} />
-                    <span className="text-sm text-gray-300">{leader.appointmentDate}</span>
+                <div className="flex items-center gap-10">
+                  <div className="flex flex-col items-start gap-1">
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 bg-[#2d2640]/60 rounded-lg flex items-center justify-center border border-[#9b87f5]/20">
+                        <Icon name="Calendar" className="text-[#9b87f5]/90" size={14} />
+                      </div>
+                      <span className="text-[10px] text-[#8b7ac7]/70 uppercase tracking-wider font-semibold">Назначен</span>
+                    </div>
+                    <span className="text-sm text-white/90 font-medium pl-9">{leader.appointmentDate}</span>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <Icon name="Phone" className="text-[#0EA5E9]/70" size={16} />
-                    <span className="text-sm text-gray-300 font-mono tracking-wider">{leader.phone}</span>
+                  <div className="flex flex-col items-start gap-1">
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 bg-[#1e2c3a]/60 rounded-lg flex items-center justify-center border border-[#0EA5E9]/20">
+                        <Icon name="Phone" className="text-[#0EA5E9]/90" size={14} />
+                      </div>
+                      <span className="text-[10px] text-[#5ba3c7]/70 uppercase tracking-wider font-semibold">Телефон</span>
+                    </div>
+                    <span className="text-sm text-white/90 font-mono tracking-wider pl-9">{leader.phone}</span>
                   </div>
                 </div>
               </div>
