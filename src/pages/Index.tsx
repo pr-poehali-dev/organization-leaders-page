@@ -79,60 +79,57 @@ const leaders: Leader[] = [
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1A1F2C] via-[#221F26] to-[#2D1B3D] py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <header className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+    <div className="min-h-screen bg-gradient-to-br from-[#0f0f23] via-[#1a1a2e] to-[#16213e] py-16 px-4">
+      <div className="w-[900px] mx-auto">
+        <header className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">
             Лидеры организаций
           </h1>
-          <div className="w-32 h-1 bg-gradient-to-r from-[#9b87f5] to-[#0EA5E9] mx-auto rounded-full"></div>
+          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#9b87f5] to-transparent mx-auto"></div>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="flex flex-col gap-3">
           {leaders.map((leader, index) => (
             <Card 
               key={index}
-              className="relative overflow-hidden bg-gradient-to-br from-[#2D1F3D] to-[#1A1F2C] border-2 border-transparent bg-clip-padding backdrop-blur-sm"
-              style={{
-                borderImage: 'linear-gradient(135deg, #9b87f5, #0EA5E9) 1'
-              }}
+              className="relative overflow-hidden bg-[#1e1e2e]/40 border border-[#2a2a3e] backdrop-blur-xl shadow-2xl"
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#9b87f5] via-[#7E69AB] to-[#0EA5E9]"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#9b87f5]/5 via-transparent to-[#0EA5E9]/5"></div>
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#9b87f5] via-[#7E69AB] to-[#0EA5E9]"></div>
               
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#9b87f5]/20 to-[#0EA5E9]/20 rounded-lg flex items-center justify-center">
-                    <Icon name={leader.icon as any} className="text-[#9b87f5]" size={24} />
+              <div className="relative px-6 py-4 flex items-center gap-6">
+                <div className="flex items-center gap-4 flex-1">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#9b87f5] to-[#0EA5E9] rounded-xl blur-md opacity-50"></div>
+                    <img 
+                      src={leader.avatar} 
+                      alt={leader.name}
+                      className="relative w-14 h-14 rounded-xl border-2 border-[#9b87f5]/40 object-cover shadow-lg"
+                    />
                   </div>
-                  <img 
-                    src={leader.avatar} 
-                    alt={leader.name}
-                    className="w-16 h-16 rounded-lg border-2 border-[#9b87f5]/30 object-cover"
-                  />
+
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-gradient-to-br from-[#9b87f5]/10 to-[#0EA5E9]/10 rounded-lg flex items-center justify-center border border-[#9b87f5]/20">
+                      <Icon name={leader.icon as any} className="text-[#9b87f5]" size={20} />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white tracking-wide">
+                        {leader.organization}
+                      </h3>
+                      <p className="text-xs text-gray-400 mt-0.5">{leader.name}</p>
+                    </div>
+                  </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-1 tracking-wide">
-                  {leader.organization}
-                </h3>
-                
-                <div className="h-px bg-gradient-to-r from-transparent via-[#9b87f5]/30 to-transparent my-4"></div>
-
-                <div className="space-y-3">
+                <div className="flex items-center gap-8">
                   <div className="flex items-center gap-2">
-                    <Icon name="User" className="text-[#0EA5E9]" size={16} />
-                    <p className="text-sm text-gray-300 font-medium">{leader.name}</p>
+                    <Icon name="Calendar" className="text-[#9b87f5]/70" size={16} />
+                    <span className="text-sm text-gray-300">{leader.appointmentDate}</span>
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <Icon name="Calendar" className="text-[#9b87f5]" size={16} />
-                    <p className="text-sm text-gray-400">
-                      Назначен: <span className="text-gray-300">{leader.appointmentDate}</span>
-                    </p>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    <Icon name="Phone" className="text-[#0EA5E9]" size={16} />
-                    <p className="text-sm text-gray-300 font-mono tracking-wider">{leader.phone}</p>
+                    <Icon name="Phone" className="text-[#0EA5E9]/70" size={16} />
+                    <span className="text-sm text-gray-300 font-mono tracking-wider">{leader.phone}</span>
                   </div>
                 </div>
               </div>
