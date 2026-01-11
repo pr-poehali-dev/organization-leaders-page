@@ -79,103 +79,135 @@ const leaders: Leader[] = [
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-[#08080e] py-20 px-4 relative overflow-hidden">
+    <div className="min-h-screen bg-[#050509] py-24 px-4 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a2e_1px,transparent_1px),linear-gradient(to_bottom,#1a1a2e_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-10"></div>
+      
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(155,135,245,0.08),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(14,165,233,0.08),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(155,135,245,0.12),transparent_40%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(14,165,233,0.12),transparent_40%)]"></div>
       </div>
-      <div className="absolute top-20 left-1/3 w-[500px] h-[500px] bg-[#9b87f5]/8 rounded-full blur-[140px] animate-pulse"></div>
-      <div className="absolute bottom-20 right-1/3 w-[500px] h-[500px] bg-[#0EA5E9]/8 rounded-full blur-[140px] animate-pulse" style={{ animationDelay: '1s' }}></div>
+      
+      <div className="absolute top-32 left-1/4 w-[600px] h-[600px] bg-[#9b87f5]/12 rounded-full blur-[160px]"></div>
+      <div className="absolute bottom-32 right-1/4 w-[600px] h-[600px] bg-[#0EA5E9]/12 rounded-full blur-[160px]"></div>
       
       <div className="w-[900px] mx-auto relative z-10">
-        <header className="text-center mb-16">
-          <div className="inline-block mb-6">
-            <div className="w-16 h-1 bg-gradient-to-r from-transparent via-[#9b87f5] to-transparent mx-auto mb-2"></div>
-            <h1 className="text-6xl font-extrabold text-white tracking-tight bg-gradient-to-br from-white via-[#e0d8ff] to-[#b8a9f5] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(155,135,245,0.3)]">
-              Лидеры организаций
+        <header className="text-center mb-20">
+          <div className="inline-flex flex-col items-center gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-20 h-[2px] bg-gradient-to-r from-transparent via-[#9b87f5] to-[#9b87f5]"></div>
+              <div className="w-2 h-2 rounded-full bg-[#9b87f5] shadow-[0_0_12px_rgba(155,135,245,0.8)]"></div>
+              <div className="w-20 h-[2px] bg-gradient-to-l from-transparent via-[#0EA5E9] to-[#0EA5E9]"></div>
+            </div>
+            
+            <h1 className="text-7xl font-black text-white tracking-tight leading-none">
+              <span className="bg-gradient-to-br from-white via-[#e8e0ff] to-[#c4b5fd] bg-clip-text text-transparent drop-shadow-[0_4px_24px_rgba(155,135,245,0.4)]">
+                Лидеры организаций
+              </span>
             </h1>
-            <div className="w-16 h-1 bg-gradient-to-r from-transparent via-[#0EA5E9] to-transparent mx-auto mt-2"></div>
+            
+            <div className="flex items-center gap-3">
+              <div className="w-20 h-[2px] bg-gradient-to-r from-transparent via-[#0EA5E9] to-[#0EA5E9]"></div>
+              <div className="w-2 h-2 rounded-full bg-[#0EA5E9] shadow-[0_0_12px_rgba(14,165,233,0.8)]"></div>
+              <div className="w-20 h-[2px] bg-gradient-to-l from-transparent via-[#9b87f5] to-[#9b87f5]"></div>
+            </div>
           </div>
         </header>
 
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-6">
           {leaders.map((leader, index) => (
-            <Card 
-              key={index}
-              className="group relative overflow-visible bg-gradient-to-br from-[#1c1828]/95 via-[#1a1a2e]/95 to-[#16162a]/95 border border-[#2d2640]/80 backdrop-blur-3xl shadow-[0_20px_60px_-15px_rgba(155,135,245,0.2),0_0_0_1px_rgba(155,135,245,0.1)] rounded-2xl"
-            >
-              <div className="absolute -inset-[1px] bg-gradient-to-r from-[#9b87f5]/20 via-transparent to-[#0EA5E9]/20 rounded-2xl opacity-0 blur-sm"></div>
+            <div key={index} className="relative">
+              <div className="absolute -inset-2 bg-gradient-to-r from-[#9b87f5]/10 via-transparent to-[#0EA5E9]/10 rounded-[28px] blur-xl"></div>
               
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(155,135,245,0.06),transparent_50%)] rounded-2xl"></div>
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(14,165,233,0.06),transparent_50%)] rounded-2xl"></div>
-              
-              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#9b87f5]/50 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#0EA5E9]/30 to-transparent"></div>
-              
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#9b87f5] via-[#7d6bb8] to-[#0EA5E9] shadow-[0_0_20px_rgba(155,135,245,0.5)] rounded-l-2xl"></div>
-              
-              <div className="relative px-9 py-6 flex items-center gap-8">
-                <div className="flex items-center gap-6 flex-1">
-                  <div className="relative group/avatar">
-                    <div className="absolute -inset-3 bg-gradient-to-br from-[#9b87f5]/40 via-[#7d6bb8]/30 to-[#0EA5E9]/40 rounded-[20px] blur-xl opacity-60"></div>
-                    <div className="absolute -inset-1 bg-gradient-to-br from-[#9b87f5] to-[#0EA5E9] rounded-[18px] opacity-50"></div>
-                    <div className="relative w-[72px] h-[72px] rounded-[16px] bg-gradient-to-br from-[#2d2640] to-[#1e1a2e] p-[2px] shadow-2xl">
-                      <div className="w-full h-full rounded-[14px] overflow-hidden border-2 border-[#9b87f5]/20">
-                        <img 
-                          src={leader.avatar} 
-                          alt={leader.name}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                    <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-br from-[#0EA5E9] to-[#0c94d4] rounded-full border-[3px] border-[#08080e] shadow-[0_0_12px_rgba(14,165,233,1)]"></div>
-                  </div>
-
-                  <div className="flex items-center gap-5">
+              <Card 
+                className="group relative overflow-visible bg-gradient-to-br from-[#1a1625]/98 via-[#1c1a2e]/98 to-[#18182a]/98 border-2 border-[#2d2640]/90 backdrop-blur-3xl shadow-[0_24px_72px_-16px_rgba(0,0,0,0.6),0_0_0_1px_rgba(155,135,245,0.15),inset_0_1px_0_rgba(255,255,255,0.03)] rounded-[24px]"
+              >
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_50%,rgba(155,135,245,0.08),transparent_60%)] rounded-[24px]"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_50%,rgba(14,165,233,0.08),transparent_60%)] rounded-[24px]"></div>
+                
+                <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#9b87f5]/60 to-transparent"></div>
+                <div className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-[#0EA5E9]/40 to-transparent"></div>
+                
+                <div className="absolute left-0 inset-y-0 w-[4px] bg-gradient-to-b from-[#9b87f5] via-[#7d6bb8] to-[#0EA5E9] shadow-[0_0_24px_rgba(155,135,245,0.6),0_0_48px_rgba(155,135,245,0.3)] rounded-l-[24px]"></div>
+                
+                <div className="absolute top-3 left-3 w-16 h-16 bg-[#9b87f5]/5 rounded-full blur-2xl"></div>
+                <div className="absolute bottom-3 right-3 w-16 h-16 bg-[#0EA5E9]/5 rounded-full blur-2xl"></div>
+                
+                <div className="relative px-10 py-7 flex items-center gap-10">
+                  <div className="flex items-center gap-7 flex-1">
                     <div className="relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#9b87f5]/30 to-[#0EA5E9]/30 rounded-2xl blur-md"></div>
-                      <div className="relative w-14 h-14 bg-gradient-to-br from-[#2d2640]/90 to-[#1e1a2e]/90 rounded-xl flex items-center justify-center border-2 border-[#9b87f5]/40 shadow-[0_8px_16px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-sm">
-                        <Icon name={leader.icon as any} className="text-[#d4c5ff] drop-shadow-[0_0_8px_rgba(155,135,245,0.6)]" size={26} />
+                      <div className="absolute -inset-4 bg-gradient-to-br from-[#9b87f5]/50 via-[#7d6bb8]/40 to-[#0EA5E9]/50 rounded-[28px] blur-2xl opacity-70"></div>
+                      <div className="absolute -inset-2 bg-gradient-to-br from-[#9b87f5]/60 via-[#8b7ac7]/50 to-[#0EA5E9]/60 rounded-[24px] blur-md"></div>
+                      <div className="absolute -inset-[2px] bg-gradient-to-br from-[#9b87f5] to-[#0EA5E9] rounded-[22px]"></div>
+                      
+                      <div className="relative w-20 h-20 rounded-[20px] bg-gradient-to-br from-[#2d2640] via-[#28253a] to-[#1e1a2e] p-[3px] shadow-[0_16px_40px_rgba(0,0,0,0.5),inset_0_2px_4px_rgba(255,255,255,0.1)]">
+                        <div className="w-full h-full rounded-[17px] overflow-hidden border-[2.5px] border-[#9b87f5]/30 shadow-[inset_0_2px_8px_rgba(0,0,0,0.3)]">
+                          <img 
+                            src={leader.avatar} 
+                            alt={leader.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                      
+                      <div className="absolute -top-[6px] -right-[6px] flex items-center justify-center">
+                        <div className="absolute w-[22px] h-[22px] bg-[#0EA5E9]/40 rounded-full blur-sm"></div>
+                        <div className="relative w-[18px] h-[18px] bg-gradient-to-br from-[#0EA5E9] to-[#0c8fd0] rounded-full border-[3.5px] border-[#050509] shadow-[0_0_16px_rgba(14,165,233,1),0_0_8px_rgba(14,165,233,0.8)]"></div>
                       </div>
                     </div>
-                    <div>
-                      <h3 className="text-xl font-extrabold text-white tracking-wide mb-1 leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
-                        {leader.organization}
-                      </h3>
-                      <p className="text-xs text-[#b8a9f5]/90 font-semibold tracking-wide">{leader.name}</p>
+
+                    <div className="flex items-center gap-6">
+                      <div className="relative">
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#9b87f5]/40 to-[#0EA5E9]/40 rounded-[20px] blur-xl"></div>
+                        <div className="relative w-[60px] h-[60px] bg-gradient-to-br from-[#2d2640]/95 via-[#28253a]/95 to-[#1e1a2e]/95 rounded-[16px] flex items-center justify-center border-[2.5px] border-[#9b87f5]/50 shadow-[0_12px_24px_rgba(0,0,0,0.5),inset_0_2px_0_rgba(255,255,255,0.1),inset_0_-2px_8px_rgba(0,0,0,0.3)] backdrop-blur-md">
+                          <Icon name={leader.icon as any} className="text-[#e0d8ff] drop-shadow-[0_0_12px_rgba(155,135,245,0.8)]" size={30} />
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <h3 className="text-[22px] font-black text-white tracking-wide mb-1.5 leading-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.4)]">
+                          {leader.organization}
+                        </h3>
+                        <p className="text-[13px] text-[#c4b5fd]/95 font-bold tracking-wider">{leader.name}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-6">
+                    <div className="relative">
+                      <div className="absolute -inset-2 bg-gradient-to-br from-[#9b87f5]/25 to-[#7d6bb8]/15 rounded-[20px] blur-lg"></div>
+                      <div className="relative flex items-center gap-4 bg-gradient-to-br from-[#2d2640]/80 via-[#28253a]/75 to-[#241f36]/80 pl-4 pr-6 py-4 rounded-[16px] border-[2px] border-[#9b87f5]/40 backdrop-blur-xl shadow-[0_8px_24px_rgba(155,135,245,0.2),inset_0_2px_0_rgba(255,255,255,0.08),inset_0_-2px_8px_rgba(0,0,0,0.2)]">
+                        <div className="relative">
+                          <div className="absolute inset-0 bg-[#9b87f5]/30 rounded-xl blur-md"></div>
+                          <div className="relative w-11 h-11 bg-gradient-to-br from-[#9b87f5]/40 to-[#7d6bb8]/25 rounded-xl flex items-center justify-center border-[2px] border-[#9b87f5]/50 shadow-[inset_0_2px_4px_rgba(255,255,255,0.1),inset_0_-2px_4px_rgba(0,0,0,0.2)]">
+                            <Icon name="Calendar" className="text-[#e8e0ff] drop-shadow-[0_0_8px_rgba(155,135,245,0.6)]" size={20} />
+                          </div>
+                        </div>
+                        <div className="flex flex-col gap-1">
+                          <span className="text-[10px] text-[#9b87f5]/80 uppercase tracking-[0.15em] font-black">Назначен</span>
+                          <span className="text-[16px] text-white font-bold tracking-wide leading-none">{leader.appointmentDate}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="relative">
+                      <div className="absolute -inset-2 bg-gradient-to-br from-[#0EA5E9]/25 to-[#0c8fd0]/15 rounded-[20px] blur-lg"></div>
+                      <div className="relative flex items-center gap-4 bg-gradient-to-br from-[#1e2c3a]/80 via-[#1c2836]/75 to-[#1a2533]/80 pl-4 pr-6 py-4 rounded-[16px] border-[2px] border-[#0EA5E9]/40 backdrop-blur-xl shadow-[0_8px_24px_rgba(14,165,233,0.2),inset_0_2px_0_rgba(255,255,255,0.08),inset_0_-2px_8px_rgba(0,0,0,0.2)]">
+                        <div className="relative">
+                          <div className="absolute inset-0 bg-[#0EA5E9]/30 rounded-xl blur-md"></div>
+                          <div className="relative w-11 h-11 bg-gradient-to-br from-[#0EA5E9]/40 to-[#0c8fd0]/25 rounded-xl flex items-center justify-center border-[2px] border-[#0EA5E9]/50 shadow-[inset_0_2px_4px_rgba(255,255,255,0.1),inset_0_-2px_4px_rgba(0,0,0,0.2)]">
+                            <Icon name="Phone" className="text-[#a8e0f7] drop-shadow-[0_0_8px_rgba(14,165,233,0.6)]" size={20} />
+                          </div>
+                        </div>
+                        <div className="flex flex-col gap-1">
+                          <span className="text-[10px] text-[#0EA5E9]/80 uppercase tracking-[0.15em] font-black">Телефон</span>
+                          <span className="text-[16px] text-white font-mono font-bold tracking-wide leading-none">{leader.phone}</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-
-                <div className="flex items-center gap-5">
-                  <div className="relative">
-                    <div className="absolute -inset-1 bg-gradient-to-br from-[#9b87f5]/20 to-[#9b87f5]/5 rounded-2xl blur-md"></div>
-                    <div className="relative flex items-center gap-3 bg-gradient-to-br from-[#2d2640]/60 to-[#241f36]/60 pl-3 pr-5 py-3 rounded-xl border border-[#9b87f5]/30 backdrop-blur-md shadow-[0_4px_16px_rgba(155,135,245,0.15),inset_0_1px_0_rgba(255,255,255,0.05)]">
-                      <div className="w-10 h-10 bg-gradient-to-br from-[#9b87f5]/30 to-[#7d6bb8]/20 rounded-lg flex items-center justify-center border border-[#9b87f5]/40 shadow-inner">
-                        <Icon name="Calendar" className="text-[#d4c5ff]" size={18} />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-[9px] text-[#9b87f5]/70 uppercase tracking-widest font-bold mb-1">Назначен</span>
-                        <span className="text-[15px] text-white/95 font-semibold tracking-wide">{leader.appointmentDate}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="relative">
-                    <div className="absolute -inset-1 bg-gradient-to-br from-[#0EA5E9]/20 to-[#0EA5E9]/5 rounded-2xl blur-md"></div>
-                    <div className="relative flex items-center gap-3 bg-gradient-to-br from-[#1e2c3a]/60 to-[#1a2533]/60 pl-3 pr-5 py-3 rounded-xl border border-[#0EA5E9]/30 backdrop-blur-md shadow-[0_4px_16px_rgba(14,165,233,0.15),inset_0_1px_0_rgba(255,255,255,0.05)]">
-                      <div className="w-10 h-10 bg-gradient-to-br from-[#0EA5E9]/30 to-[#0c94d4]/20 rounded-lg flex items-center justify-center border border-[#0EA5E9]/40 shadow-inner">
-                        <Icon name="Phone" className="text-[#7dd3f8]" size={18} />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-[9px] text-[#0EA5E9]/70 uppercase tracking-widest font-bold mb-1">Телефон</span>
-                        <span className="text-[15px] text-white/95 font-mono tracking-wide font-semibold">{leader.phone}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Card>
+              </Card>
+            </div>
           ))}
         </div>
       </div>
