@@ -136,25 +136,25 @@ const Index = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-10">
-                  <div className="flex flex-col items-start gap-1">
-                    <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 bg-[#2d2640]/60 rounded-lg flex items-center justify-center border border-[#9b87f5]/20">
-                        <Icon name="Calendar" className="text-[#9b87f5]/90" size={14} />
-                      </div>
-                      <span className="text-[10px] text-[#8b7ac7]/70 uppercase tracking-wider font-semibold">Назначен</span>
+                <div className="flex items-center gap-6">
+                  <div className="flex items-center gap-3 bg-[#2d2640]/30 px-4 py-2.5 rounded-xl border border-[#9b87f5]/20 backdrop-blur-sm">
+                    <div className="w-9 h-9 bg-gradient-to-br from-[#9b87f5]/20 to-[#9b87f5]/5 rounded-lg flex items-center justify-center border border-[#9b87f5]/30">
+                      <Icon name="Calendar" className="text-[#c4b5fd]" size={16} />
                     </div>
-                    <span className="text-sm text-white/90 font-medium pl-9">{leader.appointmentDate}</span>
+                    <div className="flex flex-col">
+                      <span className="text-[10px] text-[#9b87f5]/60 uppercase tracking-wider font-semibold mb-0.5">Назначен</span>
+                      <span className="text-sm text-white font-medium">{leader.appointmentDate}</span>
+                    </div>
                   </div>
 
-                  <div className="flex flex-col items-start gap-1">
-                    <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 bg-[#1e2c3a]/60 rounded-lg flex items-center justify-center border border-[#0EA5E9]/20">
-                        <Icon name="Phone" className="text-[#0EA5E9]/90" size={14} />
-                      </div>
-                      <span className="text-[10px] text-[#5ba3c7]/70 uppercase tracking-wider font-semibold">Телефон</span>
+                  <div className="flex items-center gap-3 bg-[#1e2c3a]/30 px-4 py-2.5 rounded-xl border border-[#0EA5E9]/20 backdrop-blur-sm">
+                    <div className="w-9 h-9 bg-gradient-to-br from-[#0EA5E9]/20 to-[#0EA5E9]/5 rounded-lg flex items-center justify-center border border-[#0EA5E9]/30">
+                      <Icon name="Phone" className="text-[#67c3e6]" size={16} />
                     </div>
-                    <span className="text-sm text-white/90 font-mono tracking-wider pl-9">{leader.phone}</span>
+                    <div className="flex flex-col">
+                      <span className="text-[10px] text-[#0EA5E9]/60 uppercase tracking-wider font-semibold mb-0.5">Телефон</span>
+                      <span className="text-sm text-white font-mono tracking-wider">{leader.phone}</span>
+                    </div>
                   </div>
                 </div>
               </div>
